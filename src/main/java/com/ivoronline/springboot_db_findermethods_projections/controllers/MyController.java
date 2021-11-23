@@ -13,11 +13,20 @@ public class MyController {
   @Autowired PersonRepository personRepository;
 
   //================================================================
-  // FIND PERSON VIEW BY NAME
+  // FIND PERSON PROJECTION BY NAME
   //================================================================
-  @RequestMapping("FindPersonViewByName")
+  @RequestMapping("FindPersonProjectionByName")
   PersonProjection findPersonViewByName() {
-    PersonProjection personProjection = personRepository.findPersonViewByName("Bill");
+
+    //GET PROJECTION FROM DB
+    PersonProjection personProjection = personRepository.findPersonProjectionByName("Bill");
+
+    //GET PROJECTION PROPERTIES
+    String  name = personProjection.getName();
+    Integer age  = personProjection.getAge();
+    System.out.println(name + " is " + age + " years old");
+
+    //RETURN PROJECTION
     return personProjection;
   }
 

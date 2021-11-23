@@ -5,7 +5,7 @@ import com.ivoronline.springboot_db_findermethods_projections.entities.PersonPro
 import org.springframework.data.repository.CrudRepository;
 
 public interface PersonRepository extends CrudRepository<Person, Integer> {
-  PersonProjection findPersonViewByName(String name);
+  PersonProjection findPersonProjectionByName(String name);
 }
 
 
